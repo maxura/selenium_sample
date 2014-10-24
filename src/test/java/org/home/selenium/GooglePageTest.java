@@ -10,9 +10,9 @@ import java.util.concurrent.TimeUnit;
 
 public class GooglePageTest {
     private String searchedText = "codenvy";
-    private String expectedLinkAfterSearch = "Codenvy | SAAS Developer Environments";
-    private String expectedTextAfterSearch = "Enterprise On-Premises Cloud: Reduce risk with Codenvy on your hardware. Apply quotas, quarantine access and monitor usage. Improve Velocity";
-    private String expectedTextAfterGoToCodenvyPafe = "Launch projects in seconds. Build, debug, deploy, clone and share. Eliminate 50 step configuration.";
+    private String expectedLinkAfterSearch = "Codenvy";
+    private String expectedTextAfterSearch = "Industrial-strength cloud IDE for developers and enterprise ...";
+    private String expectedTextAfterGoToCodenvyPafe = "Try Codenvy without an account";
 
 
     private WebDriver driver;
@@ -22,6 +22,7 @@ public class GooglePageTest {
     @Before
     public void setUp() {
         driver = new FirefoxDriver();
+        driver.manage().window().maximize();
         driver.get("http://google.com");
         PageFactoriesCreator = new PageFactoriesCreator(driver);
     }
@@ -33,7 +34,7 @@ public class GooglePageTest {
     }
 
     // This testcase describes next steps: 1. goto Google search page, enter 'codenvy' text into search field, submit,
-    // wait expected link 'Codenvy | SAAS Developer Environments', wait codenvy text under link, click on the link, wait specified text on codenvy page after go to the page.
+    // wait expected link 'Codenvy', wait codenvy text under link, click on the link, wait specified text on codenvy page after go to the page.
     @Test
     public void testSearch() {
         PageFactoriesCreator.GOOGLE_SEARCH_PAGE.fillText(searchedText);

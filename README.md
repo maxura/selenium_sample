@@ -1,2 +1,2 @@
-wso2_sample
+For launching demo - test, invoke 'mvn clean test' command
 ===========

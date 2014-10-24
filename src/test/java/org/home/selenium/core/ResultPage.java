@@ -43,6 +43,7 @@ public class ResultPage {
      * @param text
      */
     public void waitExpectedTextOnPage(String text) {
+
         new WebDriverWait(driver, 10).until(ExpectedConditions.textToBePresentInElementLocated(By.tagName("body"), text));
     }
 
